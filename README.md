@@ -4,5 +4,5 @@ Otherwise the same as [php:7.2-fpm-alpine](https://github.com/docker-library/php
 Dockerfile installs shadow for usermod and groupmod command and defaults for UID and GID 1000. Also docker-php-entrypoint file has been modified to take new values on runtime. Use environment variables `PUID` and `PGID` to override the defaults.
 
 ```bash
-docker run -it --rm -e PUID=1001 -e PGID=1234 strathos/php:7.2-fpm-uid sh
+docker run -it --rm -e PUID=1001 -e PGID=1234 strathos/php:7.2-fpm-alpine-uid sh
 ```
