@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+if [ ! -z "${PUID}" ]; then
+  usermod -u ${PUID} www-data
+	chown www-data:www-data /home/www-data
+	chown -R www-data:www-data /var/www
+fi
+
+if [ ! -z "${PGID}" ]; then
+  groupmod -g ${PGID} www-data
+	chown www-data:www-data /home/www-data
+	chown -R www-data:www-data /var/www
+fi
+
+# first arg is `-f` or `--some-option`
+if [ "${1#-}" != "$1" ]; then
+	set -- php-fpm "$@"
+fi
+
+exec "$@"
