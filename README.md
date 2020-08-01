@@ -7,7 +7,7 @@ Dockerfile installs shadow for usermod and groupmod command and defaults for UID
 
 PHP configuration defaults to the provided php.ini-production. Use environment variables `PHP_UPLOAD_MAX_FILESIZE` and `PHP_POST_MAX_SIZE` to override upload_max_filesize and post_max_size.
 ```bash
-docker run -it --rm -e PUID=1001 -e PGID=1234 strathos/php:7.2-fpm-alpine bash
+docker run -it --rm -e PUID=1001 -e PGID=1234 strathos/php:7.4-fpm-alpine bash
 ```
 There are also Dockerfiles for WordPress and Drupal. Both of them have Git, Vim, Nano and PHP Composer installed, but WordPress one has wp-cli while Drupal has Drush-loader.
 
